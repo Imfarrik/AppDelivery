@@ -5,13 +5,12 @@ import com.ccinc.api.model.TagsResponse
 import com.ccinc.common.Logger
 import com.ccinc.data.model.RequestResult
 import com.ccinc.data.model.Tags
-import com.ccinc.data.utils.toTagsDBO
-import com.ccinc.data.utils.toTags
 import com.ccinc.data.utils.map
 import com.ccinc.data.utils.toRequestResult
+import com.ccinc.data.utils.toTags
+import com.ccinc.data.utils.toTagsDBO
 import com.ccinc.database.FoodDatabase
 import com.ccinc.database.models.TagsDBO
-import jakarta.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -23,6 +22,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 class TagsRepository @Inject constructor(
     private val database: FoodDatabase,

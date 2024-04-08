@@ -1,29 +1,20 @@
 package com.ccinc.data.repositories
 
-import com.ccinc.api.model.CategoriesResponse
 import com.ccinc.common.Logger
 import com.ccinc.data.model.Basket
-import com.ccinc.data.model.Categories
-import com.ccinc.data.model.Products
-import com.ccinc.data.utils.toCategories
-import com.ccinc.database.FoodDatabase
 import com.ccinc.data.model.RequestResult
 import com.ccinc.data.utils.map
 import com.ccinc.data.utils.toBasket
 import com.ccinc.data.utils.toBasketDBO
-import com.ccinc.data.utils.toCategoriesDBO
-import com.ccinc.data.utils.toProduct
+import com.ccinc.database.FoodDatabase
 import com.ccinc.database.models.BasketDBO
-import jakarta.inject.Inject
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
+import javax.inject.Inject
 
 class BasketRepository @Inject constructor(
     private val database: FoodDatabase,

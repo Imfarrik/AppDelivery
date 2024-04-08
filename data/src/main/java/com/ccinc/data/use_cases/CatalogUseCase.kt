@@ -7,9 +7,9 @@ import com.ccinc.data.model.Tags
 import com.ccinc.data.repositories.CategoriesRepository
 import com.ccinc.data.repositories.ProductsRepository
 import com.ccinc.data.repositories.TagsRepository
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import javax.inject.Inject
 
 class CatalogUseCase @Inject constructor(
     private val categoriesRepository: CategoriesRepository,

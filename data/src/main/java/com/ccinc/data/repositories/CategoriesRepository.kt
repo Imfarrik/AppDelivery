@@ -4,14 +4,13 @@ import com.ccinc.api.FoodApi
 import com.ccinc.api.model.CategoriesResponse
 import com.ccinc.common.Logger
 import com.ccinc.data.model.Categories
-import com.ccinc.data.utils.toCategoriesDBO
-import com.ccinc.data.utils.toCategories
-import com.ccinc.database.FoodDatabase
-import com.ccinc.database.models.CategoriesDBO
 import com.ccinc.data.model.RequestResult
 import com.ccinc.data.utils.map
+import com.ccinc.data.utils.toCategories
+import com.ccinc.data.utils.toCategoriesDBO
 import com.ccinc.data.utils.toRequestResult
-import jakarta.inject.Inject
+import com.ccinc.database.FoodDatabase
+import com.ccinc.database.models.CategoriesDBO
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
@@ -23,6 +22,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 class CategoriesRepository @Inject constructor(
     private val database: FoodDatabase,
