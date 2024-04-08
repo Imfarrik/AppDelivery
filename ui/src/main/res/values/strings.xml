@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weight">Вес</string>
+    <string name="energy_per_100_grams">Энерг. ценность</string>
+    <string name="proteins">Белки</string>
+    <string name="fats">Жиры</string>
+    <string name="carbohydrates">Углеводы</string>
+    <string name="kkal">%1$s ккал</string>
+    <string name="into_basket">В корзину за %1$s ₽</string>
+    <string name="order_for">Заказать за %1$s ₽</string>
+    <string name="basket">Корзина</string>
+    <string name="no_such_foods">Таких блюд нет :(\nПопробуйте изменить фильтры</string>
+    <string name="empty_choose_foods_in_catalog">Пусто, выберите блюда\nв каталоге :)</string>
+    <string name="look_for_food">Найти блюдо</string>
+    <string name="done">Готово</string>
+    <string name="select_eats">Подобрать блюда</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Test" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="SplashTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_gif</item>
+        <item name="windowSplashScreenBackground">#F15412</item>
+        <!--        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">2000</item>-->
+        <item name="postSplashScreenTheme">@style/Theme.Test</item>
+<!--        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>-->
+    </style>
+
+</resources>
