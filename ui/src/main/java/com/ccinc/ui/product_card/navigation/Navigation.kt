@@ -4,7 +4,6 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import com.ccinc.data.model.Products
-import com.ccinc.ui.catalog.CatalogRoute
 import com.ccinc.ui.product_card.ProductCardRoute
 import com.ccinc.ui.utils.animatedComposableSlideHorizontal
 import com.google.gson.Gson

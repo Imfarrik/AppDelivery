@@ -1,6 +1,5 @@
 package com.ccinc.ui.product_card
 
-import android.nfc.Tag
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue

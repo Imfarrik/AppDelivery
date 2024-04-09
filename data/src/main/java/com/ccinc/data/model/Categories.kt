@@ -5,7 +5,7 @@ data class Categories(
     val name: String
 ) {
     companion object {
-        fun fake() : Categories =
+        fun fake(): Categories =
             Categories(id = 676153, name = "Горячие блюда")
     }
 }

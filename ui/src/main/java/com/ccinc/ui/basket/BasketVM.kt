@@ -3,9 +3,7 @@ package com.ccinc.ui.basket
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ccinc.data.model.Basket
-import com.ccinc.data.model.Products
 import com.ccinc.data.use_cases.BasketUseCase
-import com.ccinc.data.utils.toBasket
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

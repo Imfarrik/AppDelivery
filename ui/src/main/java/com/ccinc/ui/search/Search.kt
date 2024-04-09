@@ -331,7 +331,7 @@ private fun ProductsItem(
                         )
                     }
                     Text(
-                        text = productsInBasket.find { it.id == item.id }!!.count.toString(),
+                        text = productsInBasket.find { it.id == item.id } !!.count.toString(),
                         style = MaterialTheme.typography.labelSmall.copy(
                             fontSize = 16.sp,
                             fontWeight = FontWeight.W500

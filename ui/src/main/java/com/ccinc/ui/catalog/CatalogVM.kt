@@ -17,7 +17,6 @@ import com.ccinc.data.utils.toBasket
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -93,7 +92,7 @@ internal class CatalogVM @Inject constructor(
     }
 
     private fun updateIsFilterVisible() {
-        isFilterVisible = !isFilterVisible
+        isFilterVisible = ! isFilterVisible
     }
 
     private fun updateFilterList(input: Tags) {

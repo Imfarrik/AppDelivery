@@ -1,7 +1,6 @@
 package com.ccinc.common
 
 import android.util.Log
-import android.view.textclassifier.ConversationActions.Message
 
 interface Logger {
 

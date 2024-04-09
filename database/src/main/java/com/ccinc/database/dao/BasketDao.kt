@@ -6,9 +6,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.ccinc.database.models.BasketDBO
-import com.ccinc.database.models.CategoriesDBO
-import com.ccinc.database.models.ProductsDBO
-import com.ccinc.database.models.TagsDBO
 import kotlinx.coroutines.flow.Flow
 
 @Dao

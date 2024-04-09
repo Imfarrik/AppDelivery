@@ -50,7 +50,7 @@ fun NavGraphBuilder.animatedComposableSlideHorizontal(
             fadeOut()
         },
         popEnterTransition = {
-            slideInHorizontally(initialOffsetX = { -500 })
+            slideInHorizontally(initialOffsetX = { - 500 })
         },
         popExitTransition = {
             fadeOut()
