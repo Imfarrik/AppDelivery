@@ -5,6 +5,8 @@ jobs:
   Linters:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: action/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: set up JDK
         uses: actions/setup-java@v4
@@ -19,3 +21,4 @@ jobs:
       - name: Detekt
         shell: bash
         run: ./gradlew detekt
+
