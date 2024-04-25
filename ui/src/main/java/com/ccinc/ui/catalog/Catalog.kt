@@ -1,5 +1,8 @@
 package com.ccinc.ui.catalog
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.MarqueeSpacing
@@ -46,12 +49,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -256,7 +262,20 @@ private fun ProductsRow(
             ) {
 
                 items(items = filteredProductsByFilter, key = { it.id }) {
+
+                    val animatable = remember {
+                        Animatable(0.5f)
+                    }
+
+                    LaunchedEffect(key1 = true) {
+                        animatable.animateTo(1f, tween(350, easing = FastOutSlowInEasing))
+                    }
+
                     ProductsItem(
+                        modifier = Modifier.graphicsLayer {
+                            scaleX = animatable.value
+                            scaleY = animatable.value
+                        },
                         item = it,
                         productsInBasket = productsInBasket,
                         sentEvent = sentEvent,
@@ -279,13 +298,14 @@ private fun ProductsRow(
 @Composable
 @Preview
 private fun ProductsItem(
+    modifier: Modifier = Modifier,
     item: Products = Products.fake(),
     productsInBasket: List<Basket> = listOf(),
     sentEvent: (Event) -> Unit = {},
     navigateToProductCard: (Products) -> Unit = { }
 ) {
     Surface(
-        modifier = Modifier
+        modifier = modifier
             .width(170.dp),
         shape = RoundedCornerShape(8.dp),
         color = GrayBg,
