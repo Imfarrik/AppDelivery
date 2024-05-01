@@ -35,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -57,6 +58,10 @@ import com.ccinc.design_system.Primary
 import com.ccinc.ui.R
 import com.ccinc.ui.utils.checkForNull
 import com.ccinc.ui.utils.toReadableFormat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 internal fun SearchRoute(
@@ -373,6 +378,9 @@ private fun TopBar(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
+
+            val scope = rememberCoroutineScope()
+
             IconButton(modifier = Modifier.padding(vertical = 5.dp), onClick = onBack) {
                 Image(
                     painter = painterResource(id = R.drawable.arrow_left_orange),
@@ -410,3 +418,18 @@ private fun TopBar(
         }
     }
 }
+
+//fun <T> debounce(
+//    waitMs: Long = 300L,
+//    scope: CoroutineScope,
+//    destinationFunction: (T) -> Unit
+//): (T) -> Unit {
+//    var debounceJob: Job? = null
+//    return { param: T ->
+//        debounceJob?.cancel()
+//        debounceJob = scope.launch {
+//            delay(waitMs)
+//            destinationFunction(param)
+//        }
+//    }
+//}
