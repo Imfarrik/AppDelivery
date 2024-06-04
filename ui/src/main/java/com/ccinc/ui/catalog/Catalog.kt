@@ -46,6 +46,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
@@ -102,19 +103,38 @@ private fun Catalog(
 
     val currentState = state
 
-    if (currentState !is State.Undefined) {
-        CatalogScreen(
-            currentState = currentState,
-            selectedItem = vm.selectedCategories,
-            productsInBasket = productsInBasket,
-            sentEvent = vm::sentEvent,
-            navigateToProductCard = navigateToProductCard,
-            navigateToBasket = navigateToBasket,
-            navigateToSearch = navigateToSearch,
-            isSheetVisible = vm.isFilterVisible,
-            filterList = vm.filterList
-        )
+    val pin = "2323"
+    val token = "farrux"
+
+    var decode: String? = ""
+    var encode: String = ""
+
+
+        encode = CryptoHelper.encrypt(token)
+        decode = CryptoHelper.decrypt(encode)
+
+
+    Box(modifier = Modifier.fillMaxWidth().statusBarsPadding()) {
+        Column(modifier = Modifier.align(Alignment.Center)) {
+            Text(text = encode, color = Color.Black)
+            Text(text = decode.toString(), color = Color.Black)
+
+        }
     }
+
+//    if (currentState !is State.Undefined) {
+//        CatalogScreen(
+//            currentState = currentState,
+//            selectedItem = vm.selectedCategories,
+//            productsInBasket = productsInBasket,
+//            sentEvent = vm::sentEvent,
+//            navigateToProductCard = navigateToProductCard,
+//            navigateToBasket = navigateToBasket,
+//            navigateToSearch = navigateToSearch,
+//            isSheetVisible = vm.isFilterVisible,
+//            filterList = vm.filterList
+//        )
+//    }
 }
 
 @Composable
@@ -377,7 +397,7 @@ private fun ProductsItem(
                         )
                     }
                     Text(
-                        text = productsInBasket.find { it.id == item.id } !!.count.toString(),
+                        text = productsInBasket.find { it.id == item.id }!!.count.toString(),
                         style = MaterialTheme.typography.labelSmall.copy(
                             fontSize = 16.sp,
                             fontWeight = FontWeight.W500
