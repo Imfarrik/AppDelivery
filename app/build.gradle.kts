@@ -87,4 +87,25 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":ui"))
     implementation(project(":design-system"))
+
+    implementation(fileTree(mapOf(
+        "dir" to "libs",
+        "include" to listOf("*.aar", "*.jar"),
+    )))
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.serialization.converter)
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-livedata:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-runtime:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2")
+    annotationProcessor ("androidx.lifecycle:lifecycle-compiler:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-service:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-process:2.7.0")
+    implementation ("org.bouncycastle:bcpg-jdk15on:1.69")
+    api ("com.fasterxml.jackson.core:jackson-databind:2.13.5")
+    implementation ("com.android.volley:volley:1.2.1")
+    api ("cz.msebera.android:httpclient:4.5.3")
 }

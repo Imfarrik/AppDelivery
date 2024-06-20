@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <domain-config>
+
+        <domain includeSubdomains="true">payme.uz</domain>
+
+
+<!--        <domain-config cleartextTrafficPermitted="false">-->
+<!--            <domain includeSubdomains="true">api-cb4d2294ceba084b.payme.uz</domain>-->
+<!--        </domain-config>-->
+    </domain-config>
+
+<!--    <domain-config cleartextTrafficPermitted = "false">-->
+
+<!--        <domain includeSubdomains="true">poc.riskoffice.formica.ai</domain>-->
+
+<!--        <trust-anchors>-->
+<!--            <certificates src="system" />-->
+<!--            <certificates src="user" />-->
+<!--            <certificates src="@raw/formica_ca" overridePins="false"/>-->
+<!--        </trust-anchors>-->
+
+<!--    </domain-config>-->
+
+    <base-config cleartextTrafficPermitted="false">
+
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+
+    </base-config>
+
+    <debug-overrides>
+
+        <trust-anchors>
+            <certificates src="system" />
+
+            <!-- Allow user installed CA certificates for debug purpose only -->
+            <certificates src="user" />
+        </trust-anchors>
+
+    </debug-overrides>
+
+</network-security-config>
